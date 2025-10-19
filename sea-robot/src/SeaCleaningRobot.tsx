@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Zap, RotateCw, ChevronUp, ChevronRight, ChevronDown, ChevronLeft, Hand, Trophy, RotateCcw } from 'lucide-react';
+import { Zap, ChevronUp, ChevronRight, ChevronDown, ChevronLeft, Hand, Trophy, RotateCcw } from 'lucide-react';
 import 'flag-icons/css/flag-icons.min.css';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -505,21 +505,6 @@ export default function SeaCleaningRobot() {
   const clearCommands = () => {
     setCommands([]);
     setCollected(0);
-  };
-
-  const getDirectionIcon = (dir: string) => {
-    switch (dir) {
-      case 'up':
-        return <ChevronUp className="w-6 h-6" />;
-      case 'right':
-        return <ChevronRight className="w-6 h-6" />;
-      case 'down':
-        return <ChevronDown className="w-6 h-6" />;
-      case 'left':
-        return <ChevronLeft className="w-6 h-6" />;
-      default:
-        return null;
-    }
   };
 
   return (
