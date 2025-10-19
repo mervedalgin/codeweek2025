@@ -508,7 +508,7 @@ export default function SeaCleaningRobot() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900 p-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900 p-2 md:p-4 lg:p-8 relative overflow-hidden">
       <Toaster 
         position="top-center"
         reverseOrder={false}
@@ -557,17 +557,17 @@ export default function SeaCleaningRobot() {
       </div>
 
       {/* Language Selector */}
-      <div className="absolute top-4 right-4 z-50">
-        <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 backdrop-blur-lg rounded-lg p-0.5 shadow-xl border border-white/30 transition-all duration-300">
-          <div className="bg-black/30 backdrop-blur-md rounded-md p-2 flex gap-2">
+      <div className="absolute top-2 right-2 md:top-4 md:right-4 z-50">
+        <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 backdrop-blur-lg rounded-md md:rounded-lg p-0.5 shadow-xl border border-white/30 transition-all duration-300">
+          <div className="bg-black/30 backdrop-blur-md rounded-sm md:rounded-md p-1.5 md:p-2 flex gap-1.5 md:gap-2">
             <button
               onClick={() => setLanguage('tr')}
-              className={`group relative transition-all duration-300 transform hover:scale-110 ${
-                language === 'tr' ? 'scale-105' : 'opacity-70 hover:opacity-100'
+              className={`group relative transition-all duration-300 transform active:scale-95 ${
+                language === 'tr' ? 'scale-105' : 'opacity-70'
               }`}
               title="Türkçe"
             >
-              <span className={`fi fi-tr fis text-4xl rounded-md overflow-hidden border transition-all duration-300 ${
+              <span className={`fi fi-tr fis text-2xl md:text-3xl lg:text-4xl rounded-sm md:rounded-md overflow-hidden border transition-all duration-300 ${
                 language === 'tr' 
                   ? 'border-blue-400 shadow-[0_0_8px_rgba(59,130,246,0.8)] brightness-125' 
                   : 'border-white/20 grayscale hover:grayscale-0'
@@ -579,42 +579,42 @@ export default function SeaCleaningRobot() {
             
             <button
               onClick={() => setLanguage('en')}
-              className={`group relative transition-all duration-300 transform hover:scale-110 ${
-                language === 'en' ? 'scale-105' : 'opacity-70 hover:opacity-100'
+              className={`group relative transition-all duration-300 transform active:scale-95 ${
+                language === 'en' ? 'scale-105' : 'opacity-70'
               }`}
               title="English"
             >
-              <span className={`fi fi-gb fis text-4xl rounded-md overflow-hidden border transition-all duration-300 ${
+              <span className={`fi fi-gb fis text-2xl md:text-3xl lg:text-4xl rounded-sm md:rounded-md overflow-hidden border transition-all duration-300 ${
                 language === 'en' 
                   ? 'border-red-400 shadow-[0_0_8px_rgba(239,68,68,0.8)] brightness-125' 
-                  : 'border-white/20 grayscale hover:grayscale-0'
+                  : 'border-white/20 grayscale'
               }`}></span>
               {language === 'en' && (
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-red-400 to-pink-400 rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-6 md:w-8 h-0.5 bg-gradient-to-r from-red-400 to-pink-400 rounded-full animate-pulse"></div>
               )}
             </button>
             
             <button
               onClick={() => setLanguage('ar')}
-              className={`group relative transition-all duration-300 transform hover:scale-110 ${
-                language === 'ar' ? 'scale-105' : 'opacity-70 hover:opacity-100'
+              className={`group relative transition-all duration-300 transform active:scale-95 ${
+                language === 'ar' ? 'scale-105' : 'opacity-70'
               }`}
               title="العربية"
             >
-              <span className={`fi fi-sa fis text-4xl rounded-md overflow-hidden border transition-all duration-300 ${
+              <span className={`fi fi-sa fis text-2xl md:text-3xl lg:text-4xl rounded-sm md:rounded-md overflow-hidden border transition-all duration-300 ${
                 language === 'ar' 
                   ? 'border-green-400 shadow-[0_0_8px_rgba(34,197,94,0.8)] brightness-125' 
-                  : 'border-white/20 grayscale hover:grayscale-0'
+                  : 'border-white/20 grayscale'
               }`}></span>
               {language === 'ar' && (
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-6 md:w-8 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse"></div>
               )}
             </button>
           </div>
         </div>
       </div>
       
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         {!gameStarted && (
           <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
             <div className="bg-gradient-to-br from-purple-700 to-indigo-900 p-8 rounded-2xl shadow-2xl max-w-md w-full border-2 border-cyan-400">
@@ -668,26 +668,26 @@ export default function SeaCleaningRobot() {
 
         {gameStarted && (
           <>
-            <div className="text-center mb-6 animate-fade-in">
-              <div className="flex items-center justify-center gap-4 mb-2">
-                <span className="text-6xl animate-bounce" style={{ animationDuration: '2s' }}>🌊</span>
+            <div className="text-center mb-4 md:mb-6 animate-fade-in px-2">
+              <div className="flex items-center justify-center gap-2 md:gap-4 mb-2">
+                <span className="text-3xl md:text-5xl lg:text-6xl animate-bounce" style={{ animationDuration: '2s' }}>🌊</span>
                 <div className="text-center" dir={language === 'ar' ? 'rtl' : 'ltr'}>
-                  <h1 className="text-5xl font-black text-white drop-shadow-lg bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-white drop-shadow-lg bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                     CODEWEEK
                   </h1>
-                  <h2 className="text-3xl font-bold text-cyan-300 drop-shadow-lg mt-1">
+                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-cyan-300 drop-shadow-lg mt-1">
                     {t.title} 🤖
                   </h2>
-                  <p className="text-xl text-blue-200 italic mt-1">{t.subtitle}</p>
+                  <p className="text-sm md:text-lg lg:text-xl text-blue-200 italic mt-1">{t.subtitle}</p>
                 </div>
-                <span className="text-6xl animate-bounce" style={{ animationDuration: '2s', animationDelay: '0.5s' }}>🌊</span>
+                <span className="text-3xl md:text-5xl lg:text-6xl animate-bounce" style={{ animationDuration: '2s', animationDelay: '0.5s' }}>🌊</span>
               </div>
-              <p className="text-cyan-200 text-lg font-semibold" dir={language === 'ar' ? 'rtl' : 'ltr'}>{t.description} 💧</p>
+              <p className="text-sm md:text-base lg:text-lg text-cyan-200 font-semibold" dir={language === 'ar' ? 'rtl' : 'ltr'}>{t.description} 💧</p>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-6 items-start justify-center mb-6">
+            <div className="flex flex-col lg:flex-row gap-4 md:gap-6 items-start justify-center mb-4 md:mb-6 px-2">
               {/* Komut Sırası - Sol taraf */}
-              <div className="bg-gradient-to-br from-yellow-600 to-orange-600 p-4 rounded-2xl shadow-xl text-white w-64">
+              <div className="bg-gradient-to-br from-yellow-600 to-orange-600 p-3 md:p-4 rounded-xl md:rounded-2xl shadow-xl text-white w-full lg:w-64">
                 <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
                   📋 {t.commandOrder}
                 </h3>
@@ -717,9 +717,9 @@ export default function SeaCleaningRobot() {
               </div>
 
               {/* Grid - Orta */}
-              <div className="flex justify-center">
-                <div className="bg-gradient-to-br from-blue-400 to-cyan-300 p-6 rounded-2xl shadow-2xl">
-                  <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(${GRID_SIZE}, 1fr)` }}>
+              <div className="flex justify-center w-full lg:w-auto">
+                <div className="bg-gradient-to-br from-blue-400 to-cyan-300 p-2 md:p-4 lg:p-6 rounded-xl md:rounded-2xl shadow-2xl">
+                  <div className="grid gap-1 md:gap-2" style={{ gridTemplateColumns: `repeat(${GRID_SIZE}, 1fr)` }}>
                     {Array.from({ length: GRID_SIZE * GRID_SIZE }).map((_, i) => {
                       const x = i % GRID_SIZE;
                       const y = Math.floor(i / GRID_SIZE);
@@ -729,18 +729,18 @@ export default function SeaCleaningRobot() {
                       return (
                         <div
                           key={i}
-                          className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg border-2 border-cyan-300 flex items-center justify-center relative overflow-hidden shadow-lg"
+                          className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-md md:rounded-lg border border-cyan-300 md:border-2 flex items-center justify-center relative overflow-hidden shadow-lg"
                         >
                           <div className="absolute inset-0 bg-gradient-to-tr from-cyan-400/20 to-transparent animate-pulse" />
 
                           {isRobot && (
-                            <div className="animate-bounce z-20 text-3xl" style={{ animationDuration: '0.6s' }}>
+                            <div className="animate-bounce z-20 text-xl sm:text-2xl md:text-3xl" style={{ animationDuration: '0.6s' }}>
                               🤖
                             </div>
                           )}
 
                           {wasteHere && (
-                            <div className="animate-spin z-10 text-2xl" style={{ animationDuration: '2s' }}>
+                            <div className="animate-spin z-10 text-lg sm:text-xl md:text-2xl" style={{ animationDuration: '2s' }}>
                               {wasteEmojis[wasteHere.type]}
                             </div>
                           )}
@@ -752,9 +752,9 @@ export default function SeaCleaningRobot() {
               </div>
 
               {/* Komutlar ve Durum - Orta */}
-              <div className="flex flex-col gap-4">
-                <div className="bg-gradient-to-br from-purple-600 to-pink-600 p-4 rounded-2xl shadow-xl text-white">
-                  <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+              <div className="flex flex-col gap-3 md:gap-4 w-full lg:w-auto">
+                <div className="bg-gradient-to-br from-purple-600 to-pink-600 p-3 md:p-4 rounded-xl md:rounded-2xl shadow-xl text-white">
+                  <h2 className="text-lg md:text-xl font-bold mb-2 md:mb-3 flex items-center gap-2">
                     <Zap className="w-5 h-5" />
                     {t.robotStatus}
                   </h2>
@@ -770,47 +770,47 @@ export default function SeaCleaningRobot() {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-green-600 to-emerald-600 p-4 rounded-2xl shadow-xl">
-                  <h3 className="text-xl font-bold text-white mb-3">{t.commands}</h3>
-                  <div className="grid grid-cols-2 gap-2">
+                <div className="bg-gradient-to-br from-green-600 to-emerald-600 p-3 md:p-4 rounded-xl md:rounded-2xl shadow-xl">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">{t.commands}</h3>
+                  <div className="grid grid-cols-2 gap-2 md:gap-2">
                     <button
                       onClick={() => addCommand('yukarı')}
                       disabled={isExecuting || commands.length >= 15}
-                      className="bg-blue-500 hover:bg-blue-600 disabled:opacity-50 text-white font-bold py-2 px-3 rounded-lg transition-all transform hover:scale-105 active:scale-95 flex flex-col items-center justify-center gap-1 text-xs"
+                      className="bg-blue-500 hover:bg-blue-600 disabled:opacity-50 text-white font-bold py-3 md:py-2 px-2 md:px-3 rounded-lg transition-all transform active:scale-95 flex flex-col items-center justify-center gap-1 text-xs touch-manipulation"
                     >
-                      <ChevronUp className="w-4 h-4" />
-                      {t.up}
+                      <ChevronUp className="w-5 h-5 md:w-4 md:h-4" />
+                      <span className="hidden sm:inline">{t.up}</span>
                     </button>
                     <button
                       onClick={() => addCommand('aşağı')}
                       disabled={isExecuting || commands.length >= 15}
-                      className="bg-cyan-500 hover:bg-cyan-600 disabled:opacity-50 text-white font-bold py-2 px-3 rounded-lg transition-all transform hover:scale-105 active:scale-95 flex flex-col items-center justify-center gap-1 text-xs"
+                      className="bg-cyan-500 hover:bg-cyan-600 disabled:opacity-50 text-white font-bold py-3 md:py-2 px-2 md:px-3 rounded-lg transition-all transform active:scale-95 flex flex-col items-center justify-center gap-1 text-xs touch-manipulation"
                     >
-                      <ChevronDown className="w-4 h-4" />
-                      {t.down}
+                      <ChevronDown className="w-5 h-5 md:w-4 md:h-4" />
+                      <span className="hidden sm:inline">{t.down}</span>
                     </button>
                     <button
                       onClick={() => addCommand('sağ')}
                       disabled={isExecuting || commands.length >= 15}
-                      className="bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white font-bold py-2 px-3 rounded-lg transition-all transform hover:scale-105 active:scale-95 flex flex-col items-center justify-center gap-1 text-xs"
+                      className="bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white font-bold py-3 md:py-2 px-2 md:px-3 rounded-lg transition-all transform active:scale-95 flex flex-col items-center justify-center gap-1 text-xs touch-manipulation"
                     >
-                      <ChevronRight className="w-4 h-4" />
-                      {t.right}
+                      <ChevronRight className="w-5 h-5 md:w-4 md:h-4" />
+                      <span className="hidden sm:inline">{t.right}</span>
                     </button>
                     <button
                       onClick={() => addCommand('sol')}
                       disabled={isExecuting || commands.length >= 15}
-                      className="bg-purple-500 hover:bg-purple-600 disabled:opacity-50 text-white font-bold py-2 px-3 rounded-lg transition-all transform hover:scale-105 active:scale-95 flex flex-col items-center justify-center gap-1 text-xs"
+                      className="bg-purple-500 hover:bg-purple-600 disabled:opacity-50 text-white font-bold py-3 md:py-2 px-2 md:px-3 rounded-lg transition-all transform active:scale-95 flex flex-col items-center justify-center gap-1 text-xs touch-manipulation"
                     >
-                      <ChevronLeft className="w-4 h-4" />
-                      {t.left}
+                      <ChevronLeft className="w-5 h-5 md:w-4 md:h-4" />
+                      <span className="hidden sm:inline">{t.left}</span>
                     </button>
                     <button
                       onClick={() => addCommand('topla')}
                       disabled={isExecuting || commands.length >= 15}
-                      className="col-span-2 bg-red-500 hover:bg-red-600 disabled:opacity-50 text-white font-bold py-2 px-3 rounded-lg transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-1 text-sm"
+                      className="col-span-2 bg-red-500 hover:bg-red-600 disabled:opacity-50 text-white font-bold py-3 md:py-2 px-3 rounded-lg transition-all transform active:scale-95 flex items-center justify-center gap-2 text-sm md:text-sm touch-manipulation"
                     >
-                      <Hand className="w-4 h-4" />
+                      <Hand className="w-5 h-5 md:w-4 md:h-4" />
                       {t.collect}
                     </button>
                   </div>
