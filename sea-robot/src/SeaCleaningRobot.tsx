@@ -1137,9 +1137,14 @@ export default function SeaCleaningRobot() {
                     </p>
                   </div>
                   <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 p-2 rounded-lg border border-yellow-400/50">
-                    <p className="text-center text-sm font-semibold text-yellow-200">
+                    <a 
+                      href="https://birecikdumlupinar.meb.k12.tr/tema/index.php" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block text-center text-sm font-semibold text-yellow-200 hover:text-yellow-100 transition-colors underline"
+                    >
                       {t.aboutCreator}
-                    </p>
+                    </a>
                   </div>
                 </div>
               </div>
