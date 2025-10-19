@@ -260,11 +260,11 @@ export default function SeaCleaningRobot() {
       setTopScores(JSON.parse(savedScores));
     } else {
       setTopScores([
-        { name: 'Ahmet Yıldız', score: 8, class: '2-A' },
-        { name: 'Zeynep Kara', score: 8, class: '2-B' },
-        { name: 'Mehmet Demir', score: 7, class: '1-A' },
-        { name: 'Ayşe Çelik', score: 7, class: '1-B' },
-        { name: 'Ali Şahin', score: 6, class: '2-A' },
+        { name: 'Ahmet Yıldız', score: 3, class: '2-A' },
+        { name: 'Zeynep Kara', score: 2, class: '2-B' },
+        { name: 'Mehmet Demir', score: 1, class: '1-A' },
+        { name: 'Ayşe Çelik', score: 1, class: '1-B' },
+        { name: 'Ali Şahin', score: 1, class: '2-A' },
       ]);
     }
   }, []);
